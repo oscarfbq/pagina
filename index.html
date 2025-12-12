@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PlastiMamparas - Profesional</title>
   <link rel="stylesheet" href="pagina.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ⭐ HERO -->
+  <!-- ✅ NAVBAR -->
   <header class="hero">
     <nav class="navbar">
-      <img src="prueba2.png" class="logo" />
+      <img src="" class="logo" />
       <div class="nav-links">
         <a href="#modelos">Modelos</a>
         <a href="#personalizador">Personalizador</a>
@@ -22,49 +25,55 @@
       </div>
     </nav>
 
-    <div class="hero-content">
-      <h1>Fabricamos Mamparas Profesionales</h1>
-      <p>Soluciones duraderas para baños, escuelas, oficinas y más.</p>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content fade-in">
+      <h1>Mamparas Profesionales a la Medida</h1>
+      <p>Fabricación, instalación y calidad industrial para baños, escuelas y empresas.</p>
 
       <div class="hero-buttons">
         <a href="#personalizador" class="btn primary">Diseñar Mampara</a>
         <a href="#modelos" class="btn secondary">Ver Modelos</a>
       </div>
+
+      <div class="hero-badges">
+        <span>+10 años de experiencia</span>
+        <span>Instalación profesional</span>
+        <span>Atención a empresas</span>
+      </div>
     </div>
   </header>
 
 
-  <!-- ⭐ MODELOS -->
-  <section id="modelos" class="section fade-section">
-    <h2>Nuestros Modelos</h2>
+  <!-- ✅ MODELOS -->
+  <section id="modelos" class="section">
+    <h2 class="section-title">Nuestros Modelos</h2>
 
-    <div class="model-grid">
-
+    <div class="grid-3">
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/09/09/09/59/cubicle-2732216_1280.jpg">
-        <h3>Protect-Max</h3>
-        <p>Resistencia industrial y larga vida útil.</p>
+        <img src="6.jfif">
+        <h3>Protect-Max (Uso rudo)</h3>
+        <p>Ideal para plantas industriales, naves y zonas de alto tráfico.</p>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/07/09/15/30/toilet-2481583_1280.jpg">
-        <h3>Office Pro</h3>
-        <p>Perfecta para escuelas, oficinas y comercios.</p>
+        <img src="7.jfif">
+        <h3>Office Pro (Corporativo)</h3>
+        <p>Diseñada para oficinas, escuelas, consultorios y despachos.</p>
       </div>
 
       <div class="card">
-        <img src="https://cdn.pixabay.com/photo/2017/09/09/09/37/bathroom-2732148_1280.jpg">
-        <h3>Industrial Steel</h3>
-        <p>Ideal para ambientes húmedos o de alto uso.</p>
+        <img src="5.jfif">
+        <h3>Industrial Steel (Húmedos)</h3>
+        <p>Perfecta para áreas húmedas, sanitarios públicos y laboratorios.</p>
       </div>
-
     </div>
   </section>
 
 
-  <!-- ⭐ PERSONALIZADOR -->
-  <section id="personalizador" class="section fade-section">
-    <h2>Personaliza tu Mampara</h2>
+  <!-- ✅ PERSONALIZADOR -->
+  <section id="personalizador" class="section">
+    <h2 class="section-title">Personaliza tu Mampara</h2>
 
     <div class="customizer-container">
 
@@ -79,11 +88,11 @@
       <div class="customizer-controls">
         <h3>Colores</h3>
         <div class="color-options">
-          <button class="colorBtn" data-color="#3B82F6" style="background:#3B82F6"></button>
-          <button class="colorBtn" data-color="#000000" style="background:#000000"></button>
-          <button class="colorBtn" data-color="#FACC15" style="background:#FACC15"></button>
-          <button class="colorBtn" data-color="#22C55E" style="background:#22C55E"></button>
-          <button class="colorBtn" data-color="#EF4444" style="background:#EF4444"></button>
+          <button class="colorBtn" data-color="#3B82F6"></button>
+          <button class="colorBtn" data-color="#000000"></button>
+          <button class="colorBtn" data-color="#FACC15"></button>
+          <button class="colorBtn" data-color="#22C55E"></button>
+          <button class="colorBtn" data-color="#EF4444"></button>
         </div>
 
         <h3>Tamaño</h3>
@@ -93,18 +102,18 @@
         <label>Alto:</label>
         <input type="range" id="heightRange" min="140" max="260" value="180">
 
-        <button id="cotizarBtn" class="btn primary" style="margin-top:20px; width:100%;">Cotizar vía WhatsApp</button>
+        <button id="cotizarBtn" class="btn primary full">Cotizar vía WhatsApp</button>
       </div>
 
     </div>
   </section>
 
 
-  <!-- ⭐ VENTAJAS -->
-  <section id="ventajas" class="section fade-section">
-    <h2>Ventajas de nuestras mamparas</h2>
+  <!-- ✅ VENTAJAS -->
+  <section id="ventajas" class="section">
+    <h2 class="section-title">Ventajas de nuestras mamparas</h2>
 
-    <div class="ventaja-grid">
+    <div class="grid-4">
       <div class="ventaja-item">
         <h3>✔ Sólido plastificado</h3>
         <p>Material duradero y de fácil limpieza.</p>
@@ -128,23 +137,23 @@
   </section>
 
 
-  <!-- ⭐ GALERÍA -->
-  <section id="galeria" class="section fade-section">
-    <h2>Instalaciones Reales</h2>
+  <!-- ✅ GALERÍA -->
+  <section id="galeria" class="section">
+    <h2 class="section-title">Instalaciones Reales</h2>
 
     <div class="galeria-grid">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/04/15/architecture-1868726_1280.jpg">
-      <img src="https://cdn.pixabay.com/photo/2016/12/05/23/57/restroom-1884827_1280.jpg">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/11/24/bathroom-1868493_1280.jpg">
-      <img src="https://cdn.pixabay.com/photo/2017/06/25/12/03/toilet-2442614_1280.jpg">
+      <img src="1.jfif">
+      <img src="2.jfif">
+      <img src="3.jfif">
+      <img src="4.jfif">
       <img src="https://cdn.pixabay.com/photo/2017/07/09/15/30/toilet-2481584_1280.jpg">
       <img src="https://cdn.pixabay.com/photo/2014/04/02/10/56/bathroom-303075_1280.jpg">
     </div>
   </section>
 
 
-  <!-- ⭐ CONTACTO -->
-  <footer id="contacto" class="footer fade-section">
+  <!-- ✅ FOOTER -->
+  <footer id="contacto" class="footer">
     <h2>Contacto</h2>
 
     <p>Tel: 461 614 7754</p>
@@ -160,4 +169,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
