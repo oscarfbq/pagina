@@ -1,150 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PlastiMamparas</title>
-  <link rel="stylesheet" href="pagina.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlastiMamparas - Profesional</title>
+  <link rel="stylesheet" href="pagina.css" />
 </head>
+
 <body>
 
-  <header class="header">
-    <div class="logo">
-      <img src="prueba2.png" alt="PlastiMamparas">     
-    </div>
-    <nav class="nav">
-      <button onclick="mostrarSeccion('quienes')">¿QUIÉNES SOMOS?</button>
-      <button onclick="mostrarSeccion('mamparas')">MAMPARAS</button>
-      <button onclick="mostrarSeccion('pizarrones')">PIZARRONES</button>
+  <!-- ⭐ HERO -->
+  <header class="hero">
+    <nav class="navbar">
+      <img src="prueba2.png" class="logo" />
+      <div class="nav-links">
+        <a href="#modelos">Modelos</a>
+        <a href="#personalizador">Personalizador</a>
+        <a href="#ventajas">Ventajas</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </div>
     </nav>
-    <div class="fabricantes">SOMOS FABRICANTES</div>
-  </header>
 
-  <main class="main">
-    <div class="background">
-      <img src="portada2.jpg" alt="Mamparas">
-      <div class="overlay-logo">
-        <img src="log mamparas sin texto.png" alt="Logo">
+    <div class="hero-content">
+      <h1>Fabricamos Mamparas Profesionales</h1>
+      <p>Soluciones duraderas para baños, escuelas, oficinas y más.</p>
+
+      <div class="hero-buttons">
+        <a href="#personalizador" class="btn primary">Diseñar Mampara</a>
+        <a href="#modelos" class="btn secondary">Ver Modelos</a>
       </div>
     </div>
+  </header>
 
-    <!-- ================= SECCIÓN QUIÉNES SOMOS ================= -->
-    <section id="quienes" class="seccion">
-      <h2>¿Quiénes somos?</h2>
-      <p>Contamos con más de 25 años de experiencia.
-      Hemos desarrollado las primeras mamparas hechas a base de sólido plastificado.
-      No se pudren, tienen una excelente presentación, son ecológicas ya que están elaboradas de plástico reciclado.
-      Son una alternativa económica y muy durable para su proyecto.
-      Las mamparas de sólido plastificado están hechas a base de plástico sólido reciclado de 12 mm de espesor. 
-      Marco perimetral de acero inoxidable, zoclo inferior y riel superior de aluminio. 
-      Herrajes de acero inoxidable, libres de mantenimiento e indestructibles.</p>
-    </section>
 
-    <!-- ================= SECCIÓN MAMPARAS ================= -->
-    <section id="mamparas" class="seccion">
-      <h2>MAMPARAS</h2>
+  <!-- ⭐ MODELOS -->
+  <section id="modelos" class="section fade-section">
+    <h2>Nuestros Modelos</h2>
 
-      <h3 style="text-align:center; margin-top:40px;">Diseña tu Mampara</h3>
+    <div class="model-grid">
 
-      <!-- MAMPARA SVG -->
-      <div style="display:flex; justify-content:center; margin-top:20px;">
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2017/09/09/09/59/cubicle-2732216_1280.jpg">
+        <h3>Protect-Max</h3>
+        <p>Resistencia industrial y larga vida útil.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2017/07/09/15/30/toilet-2481583_1280.jpg">
+        <h3>Office Pro</h3>
+        <p>Perfecta para escuelas, oficinas y comercios.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.pixabay.com/photo/2017/09/09/09/37/bathroom-2732148_1280.jpg">
+        <h3>Industrial Steel</h3>
+        <p>Ideal para ambientes húmedos o de alto uso.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ⭐ PERSONALIZADOR -->
+  <section id="personalizador" class="section fade-section">
+    <h2>Personaliza tu Mampara</h2>
+
+    <div class="customizer-container">
+
+      <div class="mampara-preview">
         <svg id="mamparaSVG" width="350" height="260" viewBox="0 0 350 260">
-          <rect id="panel"
-                x="20" y="20" width="310" height="180"
-                rx="20" ry="20"
-                fill="#CFCFCF" stroke="#555" stroke-width="6"/>
-  
-          <path d="M60 200 L90 200 L90 240 L60 230 Z"
-                fill="#555"/>
-  
-          <path d="M260 200 L290 200 L290 230 L260 240 Z"
-                fill="#555"/>
+          <rect id="panel" x="20" y="20" width="310" height="180" rx="20" ry="20" fill="#CFCFCF" stroke="#555" stroke-width="6" />
+          <path d="M60 200 L90 200 L90 240 L60 230 Z" fill="#555" />
+          <path d="M260 200 L290 200 L290 230 L260 240 Z" fill="#555" />
         </svg>
       </div>
 
-      <!-- BOTONES DE COLOR -->
-      <div style="text-align:center; margin-top:20px;">
-        <button class="colorBtn" data-color="#3B82F6">🔵 Azul</button>
-        <button class="colorBtn" data-color="#000000">⚫ Negro</button>
-        <button class="colorBtn" data-color="#FACC15">🟡 Amarillo</button>
-        <button class="colorBtn" data-color="#22C55E">🟢 Verde</button>
-        <button class="colorBtn" data-color="#EF4444">🔴 Rojo</button>
+      <div class="customizer-controls">
+        <h3>Colores</h3>
+        <div class="color-options">
+          <button class="colorBtn" data-color="#3B82F6" style="background:#3B82F6"></button>
+          <button class="colorBtn" data-color="#000000" style="background:#000000"></button>
+          <button class="colorBtn" data-color="#FACC15" style="background:#FACC15"></button>
+          <button class="colorBtn" data-color="#22C55E" style="background:#22C55E"></button>
+          <button class="colorBtn" data-color="#EF4444" style="background:#EF4444"></button>
+        </div>
+
+        <h3>Tamaño</h3>
+        <label>Ancho:</label>
+        <input type="range" id="widthRange" min="250" max="450" value="310">
+
+        <label>Alto:</label>
+        <input type="range" id="heightRange" min="140" max="260" value="180">
+
+        <button id="cotizarBtn" class="btn primary" style="margin-top:20px; width:100%;">Cotizar vía WhatsApp</button>
       </div>
 
-      <br><br>
+    </div>
+  </section>
 
-      <!-- GALERÍAS -->
-      <div class="galeria">
-        <img src="mampara7.jpeg" alt="">
-        <img src="mampara8.jpeg" alt="">
-        <img src="mampara11.jpeg" alt="">
-      </div> 
-      <div class="galeria">
-        <img src="mampara1.jpeg" alt="">
-        <img src="mampara2.jpeg" alt="">
-        <img src="mampara20.jpg" alt="">
-      </div> 
-      <div class="galeria">
-        <img src="mampara21.jpg" alt="">
-        <img src="mampara17.jpeg" alt="">
-        <img src="mampara20.jpg" alt="">
+
+  <!-- ⭐ VENTAJAS -->
+  <section id="ventajas" class="section fade-section">
+    <h2>Ventajas de nuestras mamparas</h2>
+
+    <div class="ventaja-grid">
+      <div class="ventaja-item">
+        <h3>✔ Sólido plastificado</h3>
+        <p>Material duradero y de fácil limpieza.</p>
       </div>
 
-    </section>
+      <div class="ventaja-item">
+        <h3>✔ Acero inoxidable</h3>
+        <p>Ideal para ambientes húmedos o químicos.</p>
+      </div>
 
-    <!-- ================= SECCIÓN PIZARRONES ================= -->
-    <section id="pizarrones" class="seccion">
-      <h2>Pizarrones</h2>
-      <div class="galeria">
-        <img src="pizarron1.jpg" alt="">
-        <img src="pizarron2.jpg" alt="">
-        <img src="pizarron3.jpg" alt="">
-      </div> 
-      <div class="galeria">
-        <img src="pizarron4.jpg" alt="">
-        <img src="pizarron5.jpg" alt="">
-        <img src="pizarron6.jpg" alt="">
-      </div> 
-    </section>
-  </main>
+      <div class="ventaja-item">
+        <h3>✔ Instalación profesional</h3>
+        <p>Equipo capacitado para proyectos empresariales.</p>
+      </div>
 
-  <footer class="footer">
-    <h3>CONTACTO:</h3>
-    <p>Tel/Fax: (461) 614 7754 </p>
-    <p>Cel: 044 461 151 8186</p>
+      <div class="ventaja-item">
+        <h3>✔ Fabricación directa</h3>
+        <p>Mejores precios y calidad garantizada.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ⭐ GALERÍA -->
+  <section id="galeria" class="section fade-section">
+    <h2>Instalaciones Reales</h2>
+
+    <div class="galeria-grid">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/04/15/architecture-1868726_1280.jpg">
+      <img src="https://cdn.pixabay.com/photo/2016/12/05/23/57/restroom-1884827_1280.jpg">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/11/24/bathroom-1868493_1280.jpg">
+      <img src="https://cdn.pixabay.com/photo/2017/06/25/12/03/toilet-2442614_1280.jpg">
+      <img src="https://cdn.pixabay.com/photo/2017/07/09/15/30/toilet-2481584_1280.jpg">
+      <img src="https://cdn.pixabay.com/photo/2014/04/02/10/56/bathroom-303075_1280.jpg">
+    </div>
+  </section>
+
+
+  <!-- ⭐ CONTACTO -->
+  <footer id="contacto" class="footer fade-section">
+    <h2>Contacto</h2>
+
+    <p>Tel: 461 614 7754</p>
+    <p>Cel: 461 151 8186</p>
     <p>Email: ventas.plastimamparas@gmail.com</p>
-    <p>Ubicación: Carretera Celaya - Juventino Rosas Km4, Celaya Gto</p>
-    <p>Cp: 38080</p>
+    <p>Ubicación: Carretera Celaya - Juventino Rosas Km 4</p>
 
-    <a href="https://wa.me/5214615577822" class="whatsapp" target="_blank">
-      <img src="WhatsApp.svg" alt="WhatsApp" style="height: 40px; vertical-align: middle;">
-      461 557 7822
-    </a>
-
-    <a href="https://www.facebook.com/share/1Az3hiCnL1/" class="facebook" target="_blank">
-      <img src="facebook.png" alt="facebook" style="height: 40px; vertical-align: middle;">
+    <a class="btn whatsapp-btn" target="_blank" href="https://wa.me/5214615577822">
+      Enviar mensaje por WhatsApp
     </a>
   </footer>
 
-  <!-- ================= SCRIPT ================= -->
-  <script>
-    function mostrarSeccion(id) {
-      const secciones = document.querySelectorAll('.seccion');
-      secciones.forEach(s => s.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-      window.scrollTo({ top: document.getElementById(id).offsetTop - 80, behavior: 'smooth' });
-    }
-
-    // CAMBIO DE COLOR DEL PANEL
-    const panel = document.getElementById("panel");
-
-    document.querySelectorAll(".colorBtn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        let color = btn.dataset.color;
-        panel.setAttribute("fill", color);
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
