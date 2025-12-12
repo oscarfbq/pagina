@@ -1,132 +1,133 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== Reset ===== */
 body {
-  font-family: Arial, sans-serif;
-}
-
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #fff;
-  border-bottom: 2px solid #ccc;
-  flex-wrap: wrap;
-}
-
-.logo img {
-  height: 70px;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 10px 0;
-}
-
-.nav button {
-  background: none;
-  border: none;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.nav button:hover {
-  text-decoration: underline;
-}
-
-.fabricantes {
-  color: #002366;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* MAIN BACKGROUND */
-.main .background {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-}
-
-.background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(70%);
-}
-
-.overlay-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.overlay-logo img {
-  height: 200px;
-}
-
-/* SECCIONES */
-.seccion {
-  display: none;
-  padding: 30px;
+  margin: 0;
+  font-family: Inter, Arial;
   background: #f5f5f5;
-  font-size: 20px;
+  color: #222;
+  scroll-behavior: smooth;
 }
 
-/* GALERÍA */
-.galeria {
-  background: #f2f2f2;
-  padding: 30px;
+/* ===== HERO ===== */
+.hero {
+  height: 90vh;
+  background: url("portada2.jpg") center/cover no-repeat;
+  background-color: rgba(0,0,0,0.45);
+  background-blend-mode: darken;
+  color: white;
+  padding: 20px;
+}
+
+.navbar {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { height: 60px; }
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-content {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.primary { background: #2563eb; color: white; }
+.secondary { border: 2px solid white; color: white; }
+
+/* ===== Section style ===== */
+.section {
+  padding: 100px 10%;
+  background: white;
+  margin-top: 60px;
+  border-radius: 30px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== MODELOS ===== */
+.model-grid {
+  display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
-.galeria img {
+.card {
+  background: #fff;
+  width: 290px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card img {
   width: 100%;
-  max-width: 300px;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: 0.2s;
+  border-radius: 12px;
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
+/* ===== PERSONALIZADOR ===== */
+.customizer-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
-/* FOOTER */
+.color-options button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== GALERÍA ===== */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* ===== FOOTER ===== */
 .footer {
-  background-color: #002366;
+  background: #1f2937;
   color: white;
   padding: 40px;
   text-align: center;
 }
 
-/* BOTONES DE COLOR */
-.colorBtn {
-  padding: 10px 16px;
-  margin: 5px;
+.whatsapp-btn {
+  background: #25D366;
+  padding: 12px 25px;
   border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  background: #e3e3e3;
-  font-size: 15px;
-  transition: 0.2s;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
-.colorBtn:hover {
-  background: #cfcfcf;
-  transform: scale(1.05);
+/* ===== APARECER SUAVE ===== */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease-in-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
