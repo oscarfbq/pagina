@@ -1,43 +1,65 @@
-// ---- Cambiar color ----
+// ====== PERSONALIZADOR DE MAMPARA ======
 const panel = document.getElementById("panel");
+const widthRange = document.getElementById("widthRange");
+const heightRange = document.getElementById("heightRange");
+const colorButtons = document.querySelectorAll(".colorBtn");
+const cotizarBtn = document.getElementById("cotizarBtn");
 
-document.querySelectorAll(".colorBtn").forEach(btn => {
-  btn.onclick = () => {
+// Cambiar color
+colorButtons.forEach(btn => {
+  btn.style.background = btn.dataset.color;
+  btn.addEventListener("click", () => {
     panel.setAttribute("fill", btn.dataset.color);
-  };
+  });
 });
 
-// ---- Cambiar tamaño ----
-document.getElementById("widthRange").oninput = e => {
-  panel.setAttribute("width", e.target.value);
+// Cambiar tamaño
+const updateSize = () => {
+  panel.setAttribute("width", widthRange.value);
+  panel.setAttribute("height", heightRange.value);
 };
 
-document.getElementById("heightRange").oninput = e => {
-  panel.setAttribute("height", e.target.value);
-};
+widthRange.addEventListener("input", updateSize);
+heightRange.addEventListener("input", updateSize);
 
-// ---- Cotizar por WhatsApp ----
-document.getElementById("cotizarBtn").onclick = () => {
-  let color = panel.getAttribute("fill");
-  let w = panel.getAttribute("width");
-  let h = panel.getAttribute("height");
+// Cotizar vía WhatsApp
+cotizarBtn.addEventListener("click", () => {
+  const ancho = widthRange.value;
+  const alto = heightRange.value;
+  const color = panel.getAttribute("fill");
 
-  window.open(
-    `https://wa.me/5214615577822?text=Quiero cotizar una mampara:%0AColor: ${color}%0AAncho: ${w} cm%0AAlto: ${h} cm`
-  );
-};
+  const mensaje = `Hola, me interesa una cotización de mamparas.%0A
+- Ancho aprox: ${ancho} cm%0A
+- Alto aprox: ${alto} cm%0A
+- Color aproximado: ${color}%0A
+%0A¿Me puedes apoyar con opciones y precios?`;
 
-// ---- Animación scroll (para que no se vea todo pegado) ----
-const sections = document.querySelectorAll(".fade-section");
+  window.open(`https://wa.me/5214615577822?text=${mensaje}`, "_blank");
+});
 
-function showSections() {
-  sections.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      sec.classList.add("visible");
+// ====== SCROLL SUAVE ======
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute("href"));
+    const offsetTop = target.offsetTop - 80;
+
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth"
+    });
+  });
+});
+
+// ====== ANIMACIÓN DE SECCIONES ======
+const sections = document.querySelectorAll(".section, .footer");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("section-visible");
     }
   });
-}
+}, { threshold: 0.15 });
 
-window.addEventListener("scroll", showSections);
-showSections();
+sections.forEach(sec => observer.observe(sec));
