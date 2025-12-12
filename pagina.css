@@ -1,133 +1,290 @@
-/* ===== Reset ===== */
-body {
+* {
   margin: 0;
-  font-family: Inter, Arial;
-  background: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f7f7f7;
   color: #222;
-  scroll-behavior: smooth;
+  line-height: 1.6;
 }
 
-/* ===== HERO ===== */
-.hero {
-  height: 90vh;
-  background: url("portada2.jpg") center/cover no-repeat;
-  background-color: rgba(0,0,0,0.45);
-  background-blend-mode: darken;
-  color: white;
-  padding: 20px;
-}
-
+/* NAVBAR */
 .navbar {
+  width: 100%;
+  padding: 18px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.logo { height: 60px; }
+.logo {
+  height: 55px;
+}
 
 .nav-links a {
-  color: white;
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
-  font-weight: bold;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  background-image: url("https://cdn.pixabay.com/photo/2017/06/25/12/03/toilet-2442614_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  z-index: 1;
 }
 
 .hero-content {
-  margin-top: 120px;
-  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
 }
 
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.primary { background: #2563eb; color: white; }
-.secondary { border: 2px solid white; color: white; }
-
-/* ===== Section style ===== */
-.section {
-  padding: 100px 10%;
-  background: white;
-  margin-top: 60px;
-  border-radius: 30px;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.08);
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #eaeaea;
 }
 
-/* ===== MODELOS ===== */
-.model-grid {
+.hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hero-badges span {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.25);
+}
+
+/* BOTONES */
+.btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.primary {
+  background: #111;
+  color: #fff;
+}
+
+.primary:hover {
+  background: #000;
+}
+
+.secondary {
+  border: 2px solid #111;
+  color: #111;
+}
+
+.secondary:hover {
+  background: #111;
+  color: #fff;
+}
+
+.full {
+  width: 100%;
+}
+
+/* SECCIONES */
+.section {
+  padding: 80px 50px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* GRID MODELOS */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .card {
   background: #fff;
-  width: 290px;
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  transition: 0.2s;
 }
 
 .card img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* ===== PERSONALIZADOR ===== */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* PERSONALIZADOR */
 .customizer-container {
   display: flex;
-  justify-content: center;
   gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.color-options button {
-  width: 35px;
-  height: 35px;
+.mampara-preview,
+.customizer-controls {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.colorBtn {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
 }
 
-/* ===== GALERÍA ===== */
+/* VENTAJAS */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.ventaja-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+/* GALERÍA */
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
 .galeria-grid img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
+  transition: 0.2s;
 }
 
-/* ===== FOOTER ===== */
+.galeria-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* FOOTER */
 .footer {
-  background: #1f2937;
-  color: white;
-  padding: 40px;
+  background: #111;
+  color: #fff;
   text-align: center;
+  padding: 60px 20px;
+}
+
+.footer p {
+  margin-bottom: 8px;
 }
 
 .whatsapp-btn {
-  background: #25D366;
-  padding: 12px 25px;
-  border-radius: 8px;
   display: inline-block;
   margin-top: 20px;
-  font-weight: bold;
+  background: #25D366;
+  padding: 12px 25px;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* ===== APARECER SUAVE ===== */
-.fade-section {
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+/* ANIMACIONES */
+.section,
+.footer {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease-in-out;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.fade-section.visible {
+.section-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
 }
